@@ -11,9 +11,11 @@
     <% @articles.each do |article| %>
     <tbody>
         <tr>
-            <td><%= article.title %></td>
-            <td><%= article.description %></td>
-            <td>Placeholder</td>
+          <td><%= article.title %></td>
+          <td><%= article.description %></td>
+          <td><%= link_to 'Show', article_path(article)%></td>
+          <td><%= link_to 'Edit', article_path(article), data: {turbo_method: :edit} %></td>
+          <td><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
         </tr>
         <% end %>
     </tbody>
